@@ -34,5 +34,5 @@ Once the application is in a satisfactory state, build and deploy:
    `git commit -m "short note about what was updated"`
 3. push changes to `main` branch 
    `git push origin main`
-4. this site is hosted on GitHub Pages through the `dist` folder, so, GitHub Pages should pick everything up!
+4. this site is hosted on GitHub Pages through the `docs` folder, so, GitHub Pages should pick everything up!
 
