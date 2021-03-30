@@ -36,6 +36,7 @@ const paths = {
         css: './docs/css',
         html: './docs/html',
         assets: './docs/assets',
+        favicon: './docs/',
         img: './docs/assets/img',
         vendor: './docs/vendor'
     },
@@ -56,6 +57,7 @@ const paths = {
         css: './src/css',
         html: './src/html/**/*.html',
         assets: './src/assets/**/*.*',
+        favicon: './src/assets/img/favicon/*.*',
         partials: './src/partials/**/*.html',
         scss: './src/scss',
         node_modules: './node_modules/',
@@ -271,6 +273,11 @@ gulp.task('copy:dist:assets', function () {
         .pipe(gulp.dest(paths.dist.assets))
 });
 
+gulp.task('copy:dist:favicon', function () {
+    return gulp.src(paths.src.favicon)
+        .pipe(gulp.dest(paths.dist.favicon))
+});
+
 gulp.task('copy:dev:assets', function () {
     return gulp.src(paths.src.assets)
         .pipe(gulp.dest(paths.dev.assets))
@@ -288,7 +295,7 @@ gulp.task('copy:dev:vendor', function() {
 });
 
 gulp.task('build:dev', gulp.series('clean:dev', 'copy:dev:css', 'copy:dev:html', 'copy:dev:html:index', 'copy:dev:assets', 'beautify:css', 'copy:dev:vendor'));
-gulp.task('build:dist', gulp.series('clean:dist', 'copy:dist:css', 'copy:dist:html', 'copy:dist:html:index', 'copy:dist:assets', 'minify:css', 'minify:html', 'minify:html:index', 'copy:dist:vendor'));
+gulp.task('build:dist', gulp.series('clean:dist', 'copy:dist:css', 'copy:dist:html', 'copy:dist:html:index', 'copy:dist:assets', 'minify:css', 'minify:html', 'minify:html:index', 'copy:dist:vendor', 'copy:dist:favicon'));
 
 // Default
 gulp.task('default', gulp.series('serve'));
