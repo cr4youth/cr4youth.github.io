@@ -1,1 +1,16 @@
-// $primary: orange;
+// $cr4youth palette
+$cr4youth-green: #049c34;
+$cr4youth-orange: #f3ad39;
+$cr4youth-black: #040404;
+$cr4youth-rich-brown: #5f3905;
+$cr4youth-light-sea-green: #79d09d;
+$cr4youth-sea-green: #50bd77;
+$cr4youth-dark-green: #066124;
+$cr4youth-light-green: #22744c;
+$cr4youth-dark-blue: #08042c;
+$cr4youth-darker-brown: #301c0a;
+
+// bootstrap 5 theme variable overrides
+$primary: $cr4youth-dark-blue;
+$secondary: $cr4youth-orange;
+$tertiary: $cr4youth-dark-green;
