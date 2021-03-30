@@ -68,6 +68,7 @@ const paths = {
         css: './.temp/css',
         html: './.temp/html',
         assets: './.temp/assets',
+        favicon: './.temp/',
         vendor: './.temp/vendor'
     }
 };
@@ -123,7 +124,12 @@ gulp.task('vendor', function() {
       .pipe(gulp.dest(paths.temp.vendor));
 });
 
-gulp.task('serve', gulp.series('scss', 'html', 'index', 'assets', 'vendor', function() {
+gulp.task('favicon', function () {
+    return gulp.src(paths.src.favicon)
+        .pipe(gulp.dest(paths.temp.favicon))
+});
+
+gulp.task('serve', gulp.series('scss', 'html', 'index', 'assets', 'vendor', 'favicon', function() {
     browserSync.init({
         server: paths.temp.base
     });
@@ -273,14 +279,15 @@ gulp.task('copy:dist:assets', function () {
         .pipe(gulp.dest(paths.dist.assets))
 });
 
-gulp.task('copy:dist:favicon', function () {
-    return gulp.src(paths.src.favicon)
-        .pipe(gulp.dest(paths.dist.favicon))
-});
-
 gulp.task('copy:dev:assets', function () {
     return gulp.src(paths.src.assets)
         .pipe(gulp.dest(paths.dev.assets))
+});
+
+// Copy favicon
+gulp.task('copy:dist:favicon', function () {
+    return gulp.src(paths.src.favicon)
+        .pipe(gulp.dest(paths.dist.favicon))
 });
 
 // Copy node_modules to vendor
