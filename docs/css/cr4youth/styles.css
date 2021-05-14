@@ -14,4 +14,33 @@
 .fa-icon-7x {
   font-size: 7.25rem !important; }
 
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear; }
+
+.headroom--pinned {
+  display: block !important; }
+
+.faded-bg {
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.headroom {
+  will-change: transform;
+  transition: all 0.2s ease; }
+  .headroom a {
+    color: #08042c; }
+  .headroom.headroom--unpinned {
+    display: block !important;
+    transform: translateY(0%) !important; }
+  .headroom.headroom--not-top.navbar-theme-secondary, .headroom.headroom--not-top.navbar-theme-primary {
+    transition: all .2s ease-in; }
+
+.form-iframe {
+  width: 100%;
+  min-height: 100vh; }
+
+@media (min-width: 992px) {
+  .navbar .navbar-nav .dropdown-megamenu, .navbar .navbar-nav .dropdown-megamenu-sm, .navbar .navbar-nav .dropdown-megamenu-md {
+    min-width: inherit; } }
+
 /*# sourceMappingURL=styles.css.map */
