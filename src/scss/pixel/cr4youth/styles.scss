@@ -1,3 +1,5 @@
+@import "../../custom/variables";
+
 .hero-image {
   background-image: url("../../assets/img/cr4youth/students.jpeg");
   background-size: cover;
@@ -17,4 +19,53 @@
 
 .fa-icon-7x {
   font-size: 7.25rem !important;
+}
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+  display: block !important;
+}
+
+.faded-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.headroom {
+  will-change: transform;
+  //background-color: inherit;
+  transition: all 0.2s ease;
+
+
+
+  a {
+    color: $primary;
+  }
+
+  &.headroom--unpinned {
+    display: block !important;
+    transform: translateY(0%) !important;
+  }
+
+  &.headroom--not-top.navbar-theme-secondary,
+  &.headroom--not-top.navbar-theme-primary {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+  }
+}
+
+.form-iframe {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+  .navbar .navbar-nav .dropdown-megamenu, .navbar .navbar-nav .dropdown-megamenu-sm, .navbar .navbar-nav .dropdown-megamenu-md {
+    min-width: inherit;
+  }
 }
